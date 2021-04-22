@@ -36,7 +36,27 @@ public class Grid {
 	}
 	
 	public String toString(){
-		String str="";
-		return str;
-	}
+
+
+            String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
+
+            for(int a=0; a<11;a++) {
+                System.out.print(lettre[a]+" ");
+            }
+            System.out.println("\n   ---------------------\t");
+            for(int i=0; i<10;i++) {
+
+                System.out.print(i+" "+"| ");
+
+                for(int j=0;j<10;j++) {
+
+
+                    System.out.print(mat[i][j]+" ");
+                }
+                System.out.print("|");
+                System.out.print("\n");
+            }
+            System.out.println("   ---------------------\t");
+            return "";
+        }
 }
