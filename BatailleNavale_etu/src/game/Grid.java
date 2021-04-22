@@ -2,6 +2,8 @@ package game;
 
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 public class Grid {
 	private static final int GRID_SIZE = 10;
 	private int mat[][];
@@ -34,9 +36,31 @@ public class Grid {
 	private boolean isValidShip(Coordinates coord, int size, int dir) {
         return true;
 	}
-	
+
 	public String toString(){
-		String str="";
-		return str;
-	}
+		
+	
+	        String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
+
+	        for(int a=0; a<11;a++) {
+	            System.out.print(lettre[a]+" ");
+	        }
+	        System.out.println("\n   ---------------------\t");
+	        for(int i=0; i<10;i++) {
+
+	            System.out.print(i+" "+"| ");
+
+	            for(int j=0;j<10;j++) {
+
+
+	                System.out.print(mat[i][j]+" ");
+	            }
+	            System.out.print("|");
+	            System.out.print("\n");
+	        }
+	        System.out.println("   ---------------------\t");
+	        return "";
+	    }
 }
+	
+
