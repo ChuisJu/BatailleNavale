@@ -10,7 +10,13 @@ public class Grid {
 		mat = new int[GRID_SIZE][GRID_SIZE];
 		initMat();
 	}
+	
 	private void initMat() {
+		for ( int j=0; j<mat.length; j++ ) {
+			for ( int i=0; i<mat.length; i++ ) {
+			    mat[i][j] = 0;
+			}
+		}	
 	}
 	
 	public void randomInit() {
@@ -36,27 +42,21 @@ public class Grid {
 	}
 	
 	public String toString(){
+		String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
 
-
-            String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
-
-            for(int a=0; a<11;a++) {
-                System.out.print(lettre[a]+" ");
-            }
-            System.out.println("\n   ---------------------\t");
-            for(int i=0; i<10;i++) {
-
-                System.out.print(i+" "+"| ");
-
-                for(int j=0;j<10;j++) {
-
-
-                    System.out.print(mat[i][j]+" ");
-                }
-                System.out.print("|");
-                System.out.print("\n");
-            }
-            System.out.println("   ---------------------\t");
-            return "";
+        for(int a=0; a<11;a++) {
+            System.out.print(lettre[a]+" ");
         }
+        System.out.println("\n   ---------------------\t");
+        for(int i=0; i<10;i++) {
+            System.out.print(i+" | ");
+            for(int j=0;j<10;j++) {
+                System.out.print(mat[i][j]+" ");
+            }
+            System.out.print("|");
+            System.out.print("\n");
+        }
+        System.out.println("   ---------------------");
+        return "";
+    }
 }
