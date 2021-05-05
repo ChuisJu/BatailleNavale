@@ -43,6 +43,11 @@ public class Grid {
     }
 	
 	public void addShot(int column, int line, boolean success) {
+				 if(success=true) {
+			 mat[column][line]=1;	 
+		 }else if(success=false) {
+			mat[column][line]=4;
+		 
 
 	}
 	
