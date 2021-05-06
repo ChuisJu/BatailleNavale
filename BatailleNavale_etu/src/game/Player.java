@@ -18,26 +18,20 @@ public class Player {
     }
 	
 	public boolean recordShot(int column, int line, Player p) {
-	boolean res=false;
-	if(shotGrid.getValue(column, line)==0) {
-		if(p.hasShip(column, line)==true) {
-			shotGrid.addShot(column,line,true);
-			res= true;
-				
-		}else{
-			shotGrid.addShot(column,line,false);
-			res= false;
-		}
-			
-	}
-	return res;
-}
-	
+		boolean suc = p.hasShip(column, line);
+		shotGrid.addShot(column, line, suc);
+		return suc;
+	}	
 	private boolean hasShip(int c, int l) {
-		return false;
-	}
+        if(playerGrid.getValue(c,l)==1) {
+            return true;
+        }else {
+            return false;
+        }
+    }
 	
 	public void initGridRandom() {
+		 playerGrid.randomInit();
 	}
 	
 	public void displayGrid() {
@@ -48,8 +42,20 @@ public class Player {
 	}
 	
 	public boolean hasWin(){
-		return false;
-	}
+        boolean res=false;
+        int cpt = 0;
+           for (int i = 0; i<Grid.getGridSize(); i++) {
+               for (int j = 0; j<Grid.getGridSize(); j++) {
+                   if(shotGrid.getValue(j, i)==1) {
+                       cpt++;
+                   }                    
+               }
+           }
+           if(cpt == 18) {
+             res =true;
+          }
+          return res;
+   }
 	
 	public String getName() {
 		return name;
