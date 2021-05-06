@@ -115,7 +115,11 @@ public class Grid {
 
         System.out.println(res);
         return res;
-    }
+   	}
+		
+	public static int getGridSize() {
+		return GRID_SIZE;
+	}
 	
 	public String toString(){
 		String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
