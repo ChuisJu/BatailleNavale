@@ -1,4 +1,3 @@
-
 package game;
 
 import java.util.ArrayList;
@@ -19,19 +18,27 @@ public class Grid {
 			}
 		}	
 	}
-	
 	public void randomInit() {
+        int i = (int)(Math.random()*10);
+        int j = (int)(Math.random()*10);
 
-	}
-	
-    public int getValue(int column, int line) {
-		return mat[line][column];
-	}
+        mat[i][j] = 1;
+
+        Coordinates coord= new Coordinates(GRID_SIZE, GRID_SIZE);
+        if(isValidShip(coord, i, j)==true) {
+            placeShip(coord, i, j);
+        }
+
+    }
+
+	public int getValue(int column, int line) {
+        return mat[line][column];
+    }
 	
 	public void addShot(int column, int line, boolean success) {
-				 if(success=true) {
+				 if(success==true) {
 			 mat[line][column]=1;	 
-		 }else if(success=false) {
+		 }else{
 			mat[line][column]=4;
 		 }
 	}
@@ -100,11 +107,10 @@ public class Grid {
 
         System.out.println(res);
         return res;
-   	}
-		
+    }
 	public static int getGridSize() {
-		return GRID_SIZE;
-	}
+        return GRID_SIZE;
+    }
 	
 	public String toString(){
 		String [] lettre= {"   ","A","B","C","D","E","F","G","H","I","J"};
