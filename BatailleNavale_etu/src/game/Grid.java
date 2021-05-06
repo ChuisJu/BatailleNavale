@@ -30,11 +30,10 @@ public class Grid {
 	
 	public void addShot(int column, int line, boolean success) {
 				 if(success=true) {
-			 mat[column][line]=1;	 
+			 mat[line][column]=1;	 
 		 }else if(success=false) {
-			mat[column][line]=4;
-		 
-				 }
+			mat[line][column]=4;
+		 }
 	}
 	
 		public boolean addNewShip(int column, int line, int s, int d) {
