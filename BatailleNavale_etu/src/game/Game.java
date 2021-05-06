@@ -16,9 +16,9 @@ public class Game {
 		p.addNewShip(5,3, 4, 1);
 		p.addNewShip(9,6, 3, 0);
 		p.addNewShip(2,9, 2, 1);
-		p.addNewShip(0,0, 2, 0);
+		p.addNewShip(1,0, 2, 0);
 		p.addNewShip(8,0, 1, 0);
-		p.addNewShip(8,3, 1, 0);
+		p.addNewShip(8,4, 1, 0);
 	}
 
 	private static void initPlayerGrid(Player p) {
@@ -32,7 +32,7 @@ public class Game {
 		do {
 			p.displayGrid();
 			System.out.println("\tPlacer bateau --------> taille " + ships[i] + " : ");
-			System.out.println("Entrez la coordonnée : ");
+			System.out.println("Entrez la coordonnÃ©e : ");
 			str = scan.nextLine();
 			if(str.length()<2) continue;
 			c=str.charAt(0)-65;
@@ -48,7 +48,7 @@ public class Game {
 			}
 		}while(i<ships.length);
 		
-		System.out.println("Votre grille est complète.");
+		System.out.println("Votre grille est complÃ¨te.");
 		p.displayGrid();
 
 	}
@@ -73,33 +73,33 @@ public class Game {
 	}
 	private static void initGame() {
 		System.out.println(player1.getName()+", remplissez votre grille.\n");
-		//fakeInitPlayerGrid(player1);
-		initPlayerGrid(player1);
+		fakeInitPlayerGrid(player1);
+		//initPlayerGrid(player1);
 
-		System.out.println("Appuyez sur entrée pour changer de joueur.");
+		System.out.println("Appuyez sur entrÃ©e pour changer de joueur.");
 		scan.nextLine();
 		hideGame();
 
 		if(mode==2) {
 			System.out.println(player2.getName()+", remplissez votre grille.\n");
-			//fakeInitPlayerGrid(player2);
-			initPlayerGrid(player2);
+			fakeInitPlayerGrid(player2);
+			//initPlayerGrid(player2);
 
 		}else {
 			robot.initGridRandom();
 			System.out.println("La grille de " + robot.getName()+" est remplie.\n");
 		}
 		
-		System.out.println("Appuyez sur entrée pour commencer la partie.");
+		System.out.println("Appuyez sur entrÃ©e pour commencer la partie.");
 		scan.nextLine();
 		hideGame();
 	}
 	public static boolean shot() {
-		System.out.println(currentPlayer.getName() + ", entrez une coordonnée à attaquer.\n");
+		System.out.println(currentPlayer.getName() + ", entrez une coordonnÃ©e Ã  attaquer.\n");
 		currentPlayer.displayShotGrid();
 		String str = scan.nextLine();
 		int c=str.charAt(0)-65;
-		System.out.println(c);
+		//System.out.println(c);
 		int l=Integer.parseInt(str.substring(1, 2));
 		boolean replay = currentPlayer.recordShot(c, l, opponent);
 		
@@ -110,7 +110,7 @@ public class Game {
 		Player tmp = currentPlayer;
 		currentPlayer = opponent;
 		opponent = tmp;
-		System.out.println("Appuyez sur entrée pour changer de joueur.");
+		System.out.println("Appuyez sur entrÃ©e pour changer de joueur.");
 		scan.nextLine();
 		hideGame();
 	}
