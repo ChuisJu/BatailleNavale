@@ -69,7 +69,6 @@ public class Grid {
         }
     }
 	
-	
 	private boolean isValidShip(Coordinates coord, int size, int dir) {
         boolean res = false;
         int column=coord.getColumn();
