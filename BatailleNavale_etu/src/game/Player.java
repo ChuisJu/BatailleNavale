@@ -16,21 +16,21 @@ public class Player {
 		return false;
 	}
 	
-		public boolean recordShot(int column, int line, Player p) {
-		boolean res=false;
-		if(shotGrid.getValue(column, line)==0) {
-			if(p.hasShip(column, line)==true) {
-				shotGrid.addShot(column,line,true);
-				res= true;
+	public boolean recordShot(int column, int line, Player p) {
+	boolean res=false;
+	if(shotGrid.getValue(column, line)==0) {
+		if(p.hasShip(column, line)==true) {
+			shotGrid.addShot(column,line,true);
+			res= true;
 				
-			}else{
-				shotGrid.addShot(column,line,false);
-				res= false;
-			}
-			
+		}else{
+			shotGrid.addShot(column,line,false);
+			res= false;
 		}
-		return res;
+			
 	}
+	return res;
+}
 	
 	private boolean hasShip(int c, int l) {
 		return false;
