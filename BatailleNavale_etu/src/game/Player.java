@@ -18,10 +18,14 @@ public class Player {
     }
 	
 	public boolean recordShot(int column, int line, Player p) {
-		boolean suc = p.hasShip(column, line);
-		shotGrid.addShot(column, line, suc);
-		return suc;
-	}	
+        boolean suc=false;
+         if(shotGrid.getValue(column, line)==0) {
+        suc = p.hasShip(column, line);
+        shotGrid.addShot(column, line, suc);
+
+    }
+         return suc;
+    }
 	private boolean hasShip(int c, int l) {
         if(playerGrid.getValue(c,l)==1) {
             return true;
