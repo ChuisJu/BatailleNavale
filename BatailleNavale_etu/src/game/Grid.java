@@ -51,9 +51,15 @@ public class Grid {
 
 	}
 	
-	public boolean addNewShip(int column, int line, int s, int d) {
-		return true;
-	}
+		public boolean addNewShip(int column, int line, int s, int d) {
+        Coordinates coord= new Coordinates(column, line);
+        if(isValidShip(coord, s, d)==true) {
+            placeShip(coord, s, d);
+            return true;
+        }else {
+            return false;
+        }
+    }
 	
 	private void placeShip (Coordinates coord, int size, int dir) {
         int column=coord.getColumn();
