@@ -48,7 +48,7 @@ public class Grid {
 		 }else if(success=false) {
 			mat[column][line]=4;
 		 
-
+				 }
 	}
 	
 		public boolean addNewShip(int column, int line, int s, int d) {
