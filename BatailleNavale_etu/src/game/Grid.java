@@ -25,22 +25,7 @@ public class Grid {
 	}
 	
     public int getValue(int column, int line) {
-		int j = 0;
-		int i = 0;
-		boolean boucle = true;
-		for (i=0; boucle && i<10; i++) {
-			for (j=0; j<10; j++) {
-				if(i == column && j == line) {
-					if(mat[i][j]==1) {
-						boucle = false;
-					}
-				}
-			}
-		}
-		if (boucle == false) {
-			return 1;
-		}
-		return 0;
+		return mat[line][column];
 	}
 	
 	public void addShot(int column, int line, boolean success) {
